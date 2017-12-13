@@ -9,9 +9,10 @@ import SideBar from "./SideBar/sidebar";
 
 const HomeScreenRouter = DrawerNavigator(
     {
+        HotCall: { screen: HotCallRouter },
         Home: { screen: HomeRouter },
         Search: { screen: SearchRouter },
-        HotCall: { screen: HotCallRouter },
+        // HotCall: { screen: HotCallRouter },
         NoticeBoard: { screen: NoticeBoardRouter },
     },
     {

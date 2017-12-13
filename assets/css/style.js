@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
         flex: 30
     },
     flex40: {
-        flex: 40
+        flex: 4
     },
     flex50: {
         flex: 50
@@ -51,6 +51,12 @@ export const styles = StyleSheet.create({
     flex_row: {
         flexDirection: 'row'
     },
+    marginHorizontal: {
+        marginHorizontal: 10
+    },
+    paddingHorizontal: {
+        paddingHorizontal: 10
+    },
     background: {
         backgroundColor: colorbg
     },
@@ -73,9 +79,9 @@ export const styles = StyleSheet.create({
         color: fontcolor
     },
     item_xp_muc_phat: {
-        fontWeight: '500', 
+        fontWeight: '500',
         fontSize: 16,
-        marginVertical: 5, 
+        marginVertical: 5,
         color: colorbutton
     },
     item_xp_wraper: {
@@ -113,93 +119,111 @@ export const styles = StyleSheet.create({
         paddingVertical: 5,
         borderBottomColor: 'transparent'
     },
-    header_title: { 
-        color: colorbgbox, 
-        fontSize: 17, 
-        fontWeight: '400' 
+    header_title: {
+        color: colorbgbox,
+        fontSize: 17,
+        fontWeight: '400'
     },
-    header_body: { 
-        flex: 4, 
-        justifyContent: 'center', 
+    header_body: {
+        flex: 4,
+        justifyContent: 'center',
         alignItems: 'center'
-     },
-    sidebar_wacrapt:{
+    },
+    sidebar_wacrapt: {
         flex: 1,
         backgroundColor: colormenu
     },
-    sidebar_box: { 
-        flex: 1, 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        borderBottomWidth: 1, 
+    sidebar_box: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderBottomWidth: 1,
         borderBottomColor: colorbgbox,
         borderStyle: 'solid'
     },
-    sidebar_box_items: { 
-        flex: 1, 
+    sidebar_box_items: {
+        flex: 1,
         justifyContent: 'center',
-        alignItems: 'center' 
+        alignItems: 'center'
     },
-    sidebar_items_icon:{
-        width: 40, 
-        height: 40 
+    sidebar_items_icon: {
+        width: 40,
+        height: 40
     },
-    sidebar_items_title:{ 
-        color: colorbgbox, 
-        marginTop: 5 
+    sidebar_items_title: {
+        color: colorbgbox,
+        marginTop: 5
     },
-    fab_wacrapt: { 
+    fab_wacrapt: {
         backgroundColor: colormenu
     },
-    detail_xp_box:{ 
-        marginHorizontal: 10, 
-        backgroundColor: "#fff", 
-        padding: 10, 
-        marginBottom: 5 
+    detail_xp_box: {
+        marginHorizontal: 10,
+        backgroundColor: "#fff",
+        padding: 10,
+        marginBottom: 5
     },
-    detail_xp_wacrapt: { 
+    detail_xp_wacrapt: {
         marginTop: 10
     },
-    detail_xp_left_icon:{
-        width: 30, 
+    detail_xp_left_icon: {
+        width: 30,
         height: 30
     },
     detail_xp_right_conetnet: {
-        paddingRight: 10, 
-        alignItems: 'center', 
+        paddingRight: 10,
+        alignItems: 'center',
         justifyContent: "center"
     },
-    detail_xp_text_bold: { 
-        color: colorbutton, 
+    detail_xp_text_bold: {
+        color: colorbutton,
         fontWeight: '500'
     },
-    detail_xp_text : {
+    detail_xp_text: {
         fontWeight: "normal"
     },
-    detail_xp_menuhv: { 
-        paddingHorizontal: padding, 
-        backgroundColor: colormenu, 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        marginTop: padding, 
-        marginHorizontal: padding, 
-        shadowOffset: { 
-            width: 5, 
-            height: radius_width 
-        }, 
-        shadowColor: colorbg, 
-        shadowOpacity: 0.3, 
+    detail_xp_menuhv: {
+        paddingHorizontal: padding,
+        backgroundColor: colormenu,
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: padding,
+        marginHorizontal: padding,
+        shadowOffset: {
+            width: 5,
+            height: radius_width
+        },
+        shadowColor: colorbg,
+        shadowOpacity: 0.3,
         shadowRadius: radius_width,
         elevation: 1,
         borderRadius: 1
     },
-    detail_xp_menu_icon: { 
-        fontSize: 30, 
-        color: colorbgbox , 
+    detail_xp_menu_icon: {
+        fontSize: 30,
+        color: colorbgbox,
         paddingRight: 10
     },
     detail_xp_menu_title: {
-        color:colorbgbox
+        color: colorbgbox
+    },
+    hot_call_tentinh: {
+        fontSize: 17,
+        fontWeight: '400',
+        color: '#333'
+    },
+    hot_call_sodt_tinh: {
+        color: '#ED1B24',
+        fontSize: 16,
+        fontWeight: '500'
+    },
+    content_center: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    justifyContent_center: {
+        justifyContent: 'center',
     }
+
 });
 

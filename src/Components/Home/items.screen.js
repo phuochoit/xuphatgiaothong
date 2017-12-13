@@ -17,8 +17,6 @@ class ItemsScreen extends React.Component {
         
         const { item, index } = this.props;
         let image_group, item_noi_dung  = null;
-        var image_link = null;
-        console.log('item------', item);
         image_group = get_image_xu_phat(item.group_value, item.loai_xe);
         
         if (item.noi_dung) {
