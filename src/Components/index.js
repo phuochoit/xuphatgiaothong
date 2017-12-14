@@ -9,11 +9,11 @@ import SideBar from "./SideBar/sidebar";
 
 const HomeScreenRouter = DrawerNavigator(
     {
-        HotCall: { screen: HotCallRouter },
+        NoticeBoard: { screen: NoticeBoardRouter },
         Home: { screen: HomeRouter },
         Search: { screen: SearchRouter },
-        // HotCall: { screen: HotCallRouter },
-        NoticeBoard: { screen: NoticeBoardRouter },
+        HotCall: { screen: HotCallRouter },
+        // NoticeBoard: { screen: NoticeBoardRouter },
     },
     {
         drawerPosition: "left",

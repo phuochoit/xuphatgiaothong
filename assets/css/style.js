@@ -65,7 +65,7 @@ export const styles = StyleSheet.create({
         width: 20
     },
     item_xp_left: {
-        flex: this.flex20,
+        flex: 20,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10
@@ -223,7 +223,7 @@ export const styles = StyleSheet.create({
     },
     justifyContent_center: {
         justifyContent: 'center',
-    }
-
+    },
+    item_bb_left: { paddingVertical: 5 }
 });
 

@@ -4,7 +4,7 @@ import { Container, Text, Button, Icon, Thumbnail } from "native-base";
 import SQLite from 'react-native-sqlite-storage';
 
 import HeaderScreen from "../Header";
-
+import FabScreen from "../fab";
 import { styles } from "../../../assets/css/style";
 
 let db = SQLite.openDatabase({ name: 'atgt.sqlite', createFromLocation: "~atgt.sqlite", location: 'Library' });
@@ -67,6 +67,7 @@ class HotCallScreen extends React.Component {
                     onRefresh={this._onRefresh}
                     refreshing={this.state.refreshing}
                 />
+                <FabScreen/>
             </View>
         );
     }
