@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, View } from "react-native";
+import { Image, View} from "react-native";
 import {Text, Tab, Tabs, ScrollableTab, TabHeading, StyleProvider, getTheme } from "native-base";
 
 import HeaderScreen from "../Header/";
@@ -11,22 +11,23 @@ import FabScreen from "../fab";
 import { myTab } from "../../../assets/css/my_material";
 import { styles } from "../../../assets/css/style";
 
+import {
+    AdMobBanner,
+    AdMobInterstitial,
+    PublisherBanner,
+    AdMobRewarded,
+} from 'react-native-admob'
+
 export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
     }
-
-    componentWillMount() {
-
-    }
-
     render() {
-
         return (
             <View style={[styles.flex1, styles.background]}>
                 <HeaderScreen navigation={this.props.navigation} title="Lỗi Vi Phạm" icon_home={true} go_back="" />
                 <StyleProvider style={getTheme(myTab)}>
-                    <Tabs renderTabBar={() => <ScrollableTab />} >
+                    <Tabs renderTabBar={() => <ScrollableTab />} style={{flex:1}} >
                         <Tab
                             heading={
                                 <TabHeading style={styles.flex1}>

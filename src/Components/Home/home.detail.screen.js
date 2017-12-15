@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, View, FlatList } from "react-native";
+import { Image, View, FlatList} from "react-native";
 import { Text, Thumbnail, Content, Icon } from "native-base";
 import { isEmpty } from "lodash";
 import SQLite from 'react-native-sqlite-storage';
@@ -7,8 +7,9 @@ import SQLite from 'react-native-sqlite-storage';
 import HeaderScreen from "../Header/";
 import ItemsScreen from "./items.screen";
 import { styles, thumbnail_xp} from "../../../assets/css/style";
-import { get_image_xu_phat } from "../../Service/service";
-
+import { get_image_xu_phat} from "../../Service/service";
+import FabScreen from "../fab";
+import { AdMobBannerContent } from "../admob";
 let db = SQLite.openDatabase({ name: 'atgt.sqlite', createFromLocation: "~atgt.sqlite" });
 
 class HomeDetaileScreen extends Component {
@@ -21,7 +22,9 @@ class HomeDetaileScreen extends Component {
     }
     componentDidMount() {
         this._getData();
+
     }
+    
     _getData() {
         let record = []
         db.transaction((tx) => {
@@ -44,7 +47,7 @@ class HomeDetaileScreen extends Component {
         const { params } = this.props.navigation.state;
         image_group = get_image_xu_phat(params.group_value, params.loai_xe);
         phat_bo_sung = null;
-        
+
         if (!isEmpty(params.phat_bo_sung)) {
             phat_bo_sung = (
                 <View style={[styles.detail_xp_box]}>
@@ -91,6 +94,7 @@ class HomeDetaileScreen extends Component {
                         <Icon ios='ios-list-outline' android="ios-list" style={[styles.detail_xp_menu_icon]} />
                         <Text style={[styles.detail_xp_menu_title]}>Hành Vi Liên Quan</Text>
                     </View>
+                    <AdMobBannerContent bannerSize="mediumRectangle"/>
                     <FlatList
                         ListHeaderComponent={() => {
                             return (<View style={[styles.height10]} />);
@@ -105,6 +109,7 @@ class HomeDetaileScreen extends Component {
                         keyExtractor={item => item.id}
                     />
                 </Content>
+                <FabScreen/>
             </View>
         );
     }

@@ -1,8 +1,9 @@
-package com.luatgiaothong;
+package com.xuphatgiaothong;
 
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.sbugert.rnadmob.RNAdMobPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -23,7 +24,8 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new SQLitePluginPackage(), new MainReactPackage());
+      return Arrays.<ReactPackage>asList(new SQLitePluginPackage(), new MainReactPackage(),
+            new RNAdMobPackage());
     }
 
     @Override

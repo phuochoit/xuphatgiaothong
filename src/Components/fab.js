@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { Button, Icon, View, Fab } from 'native-base';
-import { Linking } from 'react-native'
+import { Linking} from 'react-native'
 
 import { styles, colormenu } from "../../assets/css/style";
 import { facebook_share, google_plus } from "../Service/string";
+import { AdMobBannerFooter } from "./admob";
+const count_back = 5;
 class FabScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
             active: false,
-            style: false
+            style: false,
         };
         this._OnClickFackbook = this._OnClickFackbook.bind(this);
         this._OnClickFab = this._OnClickFab.bind(this);
-        this._OnClickGoogleplus = this._OnClickGoogleplus.bind(this);
+        this._OnClickGoogleplus = this._OnClickGoogleplus.bind(this);        
     }
 
     _OnClickFab = () => {
@@ -52,6 +54,7 @@ class FabScreen extends Component {
                         <Icon name="logo-googleplus" />
                     </Button>
                 </Fab>
+                <AdMobBannerFooter bannerSize="fullBanner" />
             </View>
         );
     }

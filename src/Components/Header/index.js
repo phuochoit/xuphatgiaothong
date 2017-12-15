@@ -1,14 +1,53 @@
 import React from "react";
-import { View } from "react-native";
+import { View, BackHandler } from "react-native";
 import { Header, Left, Right, Title,  Button, Body, Icon, StyleProvider, getTheme} from "native-base";
+import { AdMobInterstitial, BANNER_FULL } from 'react-native-admob';
 
 import { styles, colorbgbox } from "../../../assets/css/style";
 import { myThemeHeader } from "../../../assets/css/my_material";
+const number_back = 0;
+
 class HeaderScreen extends React.Component {
     constructor(props){
         super(props);
+        this.state = ({
+            show_ads: false
+        });
+        this._onBackPress = this._onBackPress.bind(this);
+        this._ongoBack = this._ongoBack.bind(this);
+        
     }
-    render() {        
+    componentDidMount() {
+        BackHandler.addEventListener("hardwareBackPress", this._onBackPress);
+    }
+    componentWillUnmount() {
+        BackHandler.removeEventListener("hardwareBackPress", this._onBackPress);
+    }
+
+    _onBackPress() {
+        number_back++;
+        if (number_back == 4) {
+            this.setState({
+                show_ads: true
+            });
+            number_back = 0;
+        }
+        if (number_back == 0) {
+            this.setState({
+                show_ads: false
+            });
+        }
+    }
+    _ongoBack(){
+        this.props.navigation.goBack();
+    }
+    render() {  
+        if (this.state.show_ads) {
+            // Display an interstitial
+            AdMobInterstitial.setAdUnitID('ca-app-pub-1070789846238739/5771328983');
+            AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
+            AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd());
+        }
         button_left = (
             <Button
                 transparent
@@ -22,7 +61,7 @@ class HeaderScreen extends React.Component {
                 button_left = (
                     <Button
                         transparent
-                        onPress={() => this.props.navigation.goBack()}>
+                        onPress={this._ongoBack}>
                         <Icon name="ios-arrow-back-outline" style={[styles.search_header_icon]}  color={colorbgbox} />
                     </Button>
                 );
