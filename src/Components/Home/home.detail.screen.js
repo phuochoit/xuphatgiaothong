@@ -9,7 +9,7 @@ import ItemsScreen from "./items.screen";
 import { styles, thumbnail_xp} from "../../../assets/css/style";
 import { get_image_xu_phat } from "../../Service/service";
 
-let db = SQLite.openDatabase({ name: 'test.db', createFromLocation: "~atgt.sqlite" });
+let db = SQLite.openDatabase({ name: 'atgt.sqlite', createFromLocation: "~atgt.sqlite" });
 
 class HomeDetaileScreen extends Component {
     constructor(props) {
@@ -42,12 +42,9 @@ class HomeDetaileScreen extends Component {
     }
     render() {
         const { params } = this.props.navigation.state;
-        console.log('-------------------------');
-        console.log('result', this.state.result);
-        console.log('-------------------------');
         image_group = get_image_xu_phat(params.group_value, params.loai_xe);
-        
         phat_bo_sung = null;
+        
         if (!isEmpty(params.phat_bo_sung)) {
             phat_bo_sung = (
                 <View style={[styles.detail_xp_box]}>
@@ -62,10 +59,10 @@ class HomeDetaileScreen extends Component {
                 <HeaderScreen navigation={this.props.navigation} icon_home={false} title={params.ten_loi} go_back=""/>
                 <Content style={[styles.flex1, styles.detail_xp_wacrapt]}>
                     <View style={[styles.detail_xp_box, styles.flex_row]}>
-                        <View style={[styles.item_xp_left]}>
+                        <View style={[styles.item_xp_left,{flex:2}]}>
                             <Thumbnail square style={[styles.detail_xp_left_icon]} source={image_group} />
                         </View>
-                        <View style={[styles.detail_xp_right_conetnet]}>
+                        <View style={[styles.detail_xp_right_conetnet,{ flex: 8 }]}>
                             <Text style={[styles.item_xp_title]}>{params.ten_loi}</Text>
                         </View>
                     </View>

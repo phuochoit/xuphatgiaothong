@@ -1,21 +1,19 @@
 import React from "react";
 import { View } from "react-native";
-
-import { Header, Left, Right, Title,  Button, Body, Content, Text, Card, CardItem, Item, Input, Icon, Fab, StyleProvider, getTheme} from "native-base";
+import { Header, Left, Right, Title,  Button, Body, Icon, StyleProvider, getTheme} from "native-base";
 
 import { styles, colorbgbox } from "../../../assets/css/style";
 import { myThemeHeader } from "../../../assets/css/my_material";
 class HeaderScreen extends React.Component {
     constructor(props){
         super(props);
-        console.log('this.props', this.props);
     }
     render() {        
         button_left = (
             <Button
                 transparent
                 onPress={() => this.props.navigation.navigate("DrawerOpen")}>
-                <Icon name="ios-menu-outline" size={40} color={colorbgbox} />
+                <Icon name="ios-menu-outline" style={[styles.search_header_icon]}  color={colorbgbox} />
             </Button>
         );
 
@@ -25,7 +23,7 @@ class HeaderScreen extends React.Component {
                     <Button
                         transparent
                         onPress={() => this.props.navigation.goBack()}>
-                        <Icon name="ios-arrow-round-back" size={40} color={colorbgbox} />
+                        <Icon name="ios-arrow-back-outline" style={[styles.search_header_icon]}  color={colorbgbox} />
                     </Button>
                 );
             }else{
@@ -33,7 +31,7 @@ class HeaderScreen extends React.Component {
                     <Button
                         transparent
                         onPress={() => this.props.navigation.navigate(this.props.go_back)}>
-                        <Icon name="ios-arrow-round-back" size={40} color={colorbgbox} />
+                        <Icon name="ios-arrow-back-outline" style={[styles.search_header_icon]}  color={colorbgbox} />
                     </Button>
                 );
             }
@@ -55,7 +53,7 @@ class HeaderScreen extends React.Component {
                             <Button
                                 transparent
                                 onPress={() => this.props.navigation.navigate("Search")}>
-                                <Icon name="ios-search-outline" size={40} color={colorbgbox} />
+                                <Icon name="ios-search-outline" style={[styles.search_header_icon]}  color={colorbgbox} />
                             </Button>
                         </Right>
                     </Header>

@@ -7,7 +7,7 @@ import HomeDetaileScreen from "./home.detail.screen";
 const HomeRouter = StackNavigator(
     {
         Home: { screen: HomeScreen },
-        HomeDetail: { screen: HomeDetaileScreen}
+        HomeDetail: { screen: HomeDetaileScreen }
     },
     {
         headerMode: "none"

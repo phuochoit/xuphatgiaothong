@@ -1,17 +1,14 @@
 import React from "react";
 import { View } from "react-native";
-import { Text,H3,Thumbnail } from "native-base";
+import { H3,Thumbnail } from "native-base";
 import { styles, thumbnail_xp } from "../../../assets/css/style";
 import { get_image_bb } from "../../Service/service";
 
 class ItemsScreen extends React.Component {
     constructor(props) {
         super(props);
-        this._onPressButton = this._onPressButton.bind(this);
     }
-    _onPressButton() {
-        this.props.navigation.navigate('HomeDetail', this.props.item);
-    }
+
     render() {
         const { item, index } = this.props;
         let image_group, item_noi_dung = null;

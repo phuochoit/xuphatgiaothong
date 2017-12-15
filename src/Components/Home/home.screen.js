@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, View } from "react-native";
-import { Container, Header, Title, Left, Icon, Right, Button, Body, Content, Text, Card, CardItem, Item, Input, Tab, Tabs, ScrollableTab, TabHeading, StyleProvider, getTheme } from "native-base";
+import {Text, Tab, Tabs, ScrollableTab, TabHeading, StyleProvider, getTheme } from "native-base";
 
 import HeaderScreen from "../Header/";
 import ScooterScreen from "./scooter.screen";
@@ -28,7 +28,6 @@ export default class HomeScreen extends React.Component {
                 <StyleProvider style={getTheme(myTab)}>
                     <Tabs renderTabBar={() => <ScrollableTab />} >
                         <Tab
-
                             heading={
                                 <TabHeading style={styles.flex1}>
                                     <Image

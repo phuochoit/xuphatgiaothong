@@ -14,6 +14,7 @@ class DangerScreen extends Component {
             refreshing: false
         });
         this._getdata = this._getdata.bind(this);
+        this._onRefresh = this._onRefresh.bind(this);
     }
     componentDidMount() {
         this._getdata();
@@ -62,8 +63,6 @@ class DangerScreen extends Component {
                         );
                     }}
                     keyExtractor={item => item.id}
-                    onEndReachedThreshold={0.1}
-                    onEndReached={this._onEndReached}
                     onRefresh={this._onRefresh}
                     refreshing={this.state.refreshing}
                 />

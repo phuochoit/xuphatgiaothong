@@ -28,7 +28,6 @@ class ScooterScreen extends React.Component {
     }
     _getdata(){
         let record = [];
-        let newcode = null;
         db.transaction((tx) => {
             tx.executeSql('SELECT * FROM Xuphat where loai_xe = 2 ORDER BY ten_loi asc limit 0,20', [], (tx, results) => {
                 let len = results.rows.length;

@@ -1,5 +1,9 @@
 import { StyleSheet, Dimensions, Image, Platform } from "react-native";
 
+const { width, height } = Dimensions.get("window");
+export const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
+
 export const colormenu = "#407ED2";
 export const colorbutton = "#ED1B24";
 export const colorbgheader = "#E81E2A";
@@ -47,6 +51,9 @@ export const styles = StyleSheet.create({
     },
     height10: {
         height: 10
+    },
+    height0: {
+        height: 0
     },
     flex_row: {
         flexDirection: 'row'
@@ -167,8 +174,8 @@ export const styles = StyleSheet.create({
         marginTop: 10
     },
     detail_xp_left_icon: {
-        width: 30,
-        height: 30
+        width: 40,
+        height: 40
     },
     detail_xp_right_conetnet: {
         paddingRight: 10,
@@ -224,6 +231,48 @@ export const styles = StyleSheet.create({
     justifyContent_center: {
         justifyContent: 'center',
     },
-    item_bb_left: { paddingVertical: 5 }
+    item_bb_left: {
+        paddingVertical: 5
+    },
+    search_spinner_box: {
+        justifyContent: 'center',
+        top: 10
+    },
+    search_emtry_box: {
+        flex: 0,
+        backgroundColor: colorbg,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: deviceHeight - 45
+    },
+    search_emtry_icon: {
+        fontSize: 100,
+        color: colormenu
+    },
+    search_header_left: {
+        flex: 1,
+        alignItems: 'flex-start'
+    },
+    search_header_icon: {
+        fontSize: 30,
+        color: colorbgbox
+    },
+    search_header_item: {
+        backgroundColor: colorbgbox,
+        marginVertical: 10,
+        height: 35,
+        padding: 10,
+        flex: 8,
+        justifyContent: 'center'
+    },
+    search_header_input: {
+        height: 40,
+        justifyContent: 'center'
+    },
+    search_header_right: {
+        flex: 1,
+        alignItems: 'flex-end',
+        marginRight: 10
+    }
 });
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { Image, View, } from "react-native";
-import { Text, StyleProvider, getTheme, Tabs, Tab, TabHeading, ScrollableTab} from "native-base";
+import { Text, StyleProvider, getTheme, Tabs, Tab, TabHeading, ScrollableTab } from "native-base";
 
 import HeaderScreen from "../Header";
 import FabScreen from "../fab";
-import { styles} from "../../../assets/css/style";
+import { styles } from "../../../assets/css/style";
 import { myTab } from "../../../assets/css/my_material";
 
 import ExtraScreen from "./extra.screen";
@@ -14,7 +14,7 @@ import DangerScreen from "./danger.screen";
 import ProhibitScreen from "./prohibit.screen";
 
 class NoticeBoardScreen extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
     render() {
@@ -45,13 +45,13 @@ class NoticeBoardScreen extends React.Component {
                                     style={[styles.icon_tab]}
                                     source={require('../../../assets/images/icons/icon_bb_nguyhiem.png')}
                                 />
-                                <Text style={{ flex:1, width: 250 }}>Biển Báo Nguy Hiểm</Text>
+                                <Text style={{ flex: 1, width: 250 }}>Biển Báo Nguy Hiểm</Text>
                             </TabHeading>
                         }>
                             <DangerScreen navigation={this.props.navigation} />
                         </Tab>
                         <Tab heading={
-                            <TabHeading style={[styles.flex1,  ]}>
+                            <TabHeading style={[styles.flex1,]}>
                                 <Image
                                     square
                                     style={[styles.icon_tab]}
@@ -63,7 +63,7 @@ class NoticeBoardScreen extends React.Component {
                             <ControlScreen navigation={this.props.navigation} />
                         </Tab>
                         <Tab heading={
-                            <TabHeading style={[styles.flex1,  ]}>
+                            <TabHeading style={[styles.flex1,]}>
                                 <Image
                                     square
                                     style={[styles.icon_tab]}
@@ -75,7 +75,7 @@ class NoticeBoardScreen extends React.Component {
                             <LeadScreen navigation={this.props.navigation} />
                         </Tab>
                         <Tab heading={
-                            <TabHeading style={[styles.flex1,  ]}>
+                            <TabHeading style={[styles.flex1,]}>
                                 <Image
                                     square
                                     style={[styles.icon_tab]}

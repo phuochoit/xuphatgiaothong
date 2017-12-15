@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, View, TouchableOpacity } from "react-native";
 import { isEmpty } from "lodash";
-import { Container, Text, Thumbnail, H3, Card, CardItem, Body } from "native-base";
+import { Text, Thumbnail, H3 } from "native-base";
 import { styles,thumbnail_xp} from "../../../assets/css/style";
 import { get_image_xu_phat } from "../../Service/service";
 

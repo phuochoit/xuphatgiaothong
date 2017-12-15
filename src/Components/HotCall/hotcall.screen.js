@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList, View, Linking, TouchableOpacity } from "react-native";
-import { Container, Text, Button, Icon, Thumbnail } from "native-base";
+import { Text, Button, Thumbnail } from "native-base";
 import SQLite from 'react-native-sqlite-storage';
 
 import HeaderScreen from "../Header";
