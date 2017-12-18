@@ -1,4 +1,4 @@
-package com.xuphatgiaothong;
+package com.phuochoit.xuphatgiaothong;
 
 import android.app.Application;
 
@@ -24,8 +24,11 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new SQLitePluginPackage(), new MainReactPackage(),
-            new RNAdMobPackage());
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+          new SQLitePluginPackage(), // register SQLite Plugin here
+            new RNAdMobPackage()
+      );
     }
 
     @Override
