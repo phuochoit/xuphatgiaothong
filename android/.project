@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>xuphatgiaothong</name>
 	<comment>Project luatgiaothong created by Buildship.</comment>
+=======
+	<name>luatgiaothong</name>
+	<comment>Project phuochot.xuphatgiaothong created by Buildship.</comment>
+>>>>>>> db7e307402afa493a810b9b6c0434ed6a1e9a44c
 	<projects>
 	</projects>
 	<buildSpec>

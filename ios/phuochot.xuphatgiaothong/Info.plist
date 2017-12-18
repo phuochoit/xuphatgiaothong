@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>xuphatgiaothong</string>
+	<string>Xử phạt giao thông 2018</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -39,9 +39,8 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSAppTransportSecurity</key>
-	<!--See http://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/ -->
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
@@ -52,7 +51,6 @@
 			</dict>
 		</dict>
 	</dict>
-<<<<<<< HEAD:ios/xuphatgiaothong/Info.plist
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
@@ -68,7 +66,5 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 	</array>
-=======
->>>>>>> db7e307402afa493a810b9b6c0434ed6a1e9a44c:ios/luatgiaothong/Info.plist
 </dict>
 </plist>
