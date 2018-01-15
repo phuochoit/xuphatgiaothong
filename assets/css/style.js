@@ -157,6 +157,11 @@ export const styles = StyleSheet.create({
         width: 40,
         height: 40
     },
+    tab_items_icon: {
+        width: 20,
+        height: 20,
+        tintColor:'#fff'
+    },
     sidebar_items_title: {
         color: colorbgbox,
         marginTop: 5

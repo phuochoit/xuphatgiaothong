@@ -1,0 +1,5 @@
+export const SCOOTER_SELECCT = 'SCOOTER_SELECCT';
+
+
+export const FETCH_SUCCEEDED = 'FETCH_SUCCEEDED';
+export const FETCH_FAILED = 'FETCH_FAILED';

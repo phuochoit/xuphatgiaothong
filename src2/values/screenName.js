@@ -1,0 +1,7 @@
+const HOME = "HOME";
+const HOTCALL = "HOTCALL";
+const MORE = "MORE";
+const NOTICEBOARD = "NOTICEBOARD";
+const SEARCH = "SEARCH";
+
+export { HOME, HOTCALL, MORE, NOTICEBOARD, SEARCH };
