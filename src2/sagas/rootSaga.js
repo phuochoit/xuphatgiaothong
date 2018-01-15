@@ -1,6 +1,9 @@
-import { call, all } from 'redux-saga/effects';
-import { watchFetchMovies } from './scooterSagas';
+import { fork  } from 'redux-saga/effects';
+import { watchFetchScooter, watchFetchMoreScooter } from './scooterSagas';
 
 export default function* rootSaga() {
-    yield call(watchFetchMovies);
+    yield [
+        fork(watchFetchScooter),
+        fork(watchFetchMoreScooter),
+    ];
 }

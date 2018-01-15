@@ -9,16 +9,13 @@ import { fetchScooterAction, fetchSuccessAction, fetchFailedAction } from '../..
 
 const mapStateToProps = (state) => {
     return {
-        nav: state.nav,
-        scooter: state.scooter
+        nav: state.nav
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onFetchScooter: () => {
-            dispatch(fetchScooterAction());
-        },
+
     };
 }
 const HomeContainer = connect(mapStateToProps, mapDispatchToProps)(HomeComponent);

@@ -278,6 +278,29 @@ export const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'flex-end',
         marginRight: 10
+    },
+    // new style home page
+    position_full:{
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    home_image: { 
+        width: width, 
+        height: (width / 2) - 10,
+        resizeMode: 'stretch'
+    },
+    home_scrollView: {
+        flex: 1,
+        marginTop: 10, 
+        paddingHorizontal: 5
+    },
+    home_scrollView_view: {
+        marginBottom: 10
     }
 });
 

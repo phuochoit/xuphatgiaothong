@@ -5,7 +5,8 @@ import { TabNavigator } from "react-navigation";
 // import { myThemeFooter } from "../../assets/css/my_material";
 import { styles, background2FB8FE } from "../../assets/css/style";
 
-import HomeContainer from "../containers/Home/HomeContainer";
+import HomeNavigator from "./HomeNavigator";
+
 import HotCallComponent from "../components/HotCall/HotCallComponent";
 import NoticeBoardComponent from "../components/NoticeBoard/NoticeBoardComponent";
 import SearchComponent from "../components/Search/SearchComponent";
@@ -15,7 +16,7 @@ import { HOME, HOTCALL, MORE, NOTICEBOARD, SEARCH } from "../values/screenName";
 
 export default (AppNavigators = TabNavigator(
     {
-        HOME: { screen: HomeContainer },
+        HOME: { screen: HomeNavigator },
         NOTICEBOARD: { screen: NoticeBoardComponent },
         HOTCALL: { screen: HotCallComponent },
         SEARCH: { screen: SearchComponent },

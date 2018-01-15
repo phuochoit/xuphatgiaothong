@@ -1,31 +1,47 @@
+// react
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import { Button } from "native-base";
+import { Text, View, Image, Dimensions, ScrollView, TouchableOpacity} from 'react-native';
+//component
+import HeaderComponent from "../Header/";
+//styles
+import { styles } from '../../../assets/css/style';
+//
+import { SCOOTER } from "../../values/screenName";
+
 class HomeComponent extends Component {
     constructor(props) {
         super(props);
-        this._ongonavigate = this._ongonavigate.bind(this);
-        console.log('naviagation', this.props.navigation);
     }
-    componentDidMount(){
-        console.log('naviagation', this.props.navigation);
-        this.props.onFetchScooter();
+    componentDidMount() {
     }
-    _ongonavigate(){
-        this.props.navigation.navigate('HOTCALL', { name: 'Brent' });
-    }
-    
+
     render() {
-        console.log('scooter---', this.props.scooter);
-        console.log('naviagation', this.props.navigation);
         return (
-            <View>
-                <Button onPress={this._ongonavigate}>
-                    <Text>HotCallComponent</Text>
-                </Button>
+            <View style={[styles.background,styles.flex1]}>
+                <HeaderComponent {...this.props} title="Lỗi Vi Phạm" icon_home={true} go_back="" />
+                <ScrollView style={[styles.home_scrollView]}>
+                    <View style={[styles.item_xp_wraper_boxshadow, styles.home_scrollView_view]}>
+                        <TouchableOpacity onPress={() => {
+                            this.props.navigation.navigate(SCOOTER);
+                        }}>
+                            <Image source={require('../../../assets/images/icons-xemay.jpg')} style={[styles.home_image]} />
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={[styles.item_xp_wraper_boxshadow, styles.home_scrollView_view]}>
+                        <Image source={require('../../../assets/images/icons-oto.jpg')} style={[styles.home_image]} />
+                    </View>
+                    <View style={[styles.item_xp_wraper_boxshadow, styles.home_scrollView_view]}>
+                        <Image source={require('../../../assets/images/icons-xebus.jpg')} style={[styles.home_image]} />
+                    </View>
+                    <View style={[styles.item_xp_wraper_boxshadow, styles.home_scrollView_view]}>
+                        <Image source={require('../../../assets/images/icons-xetai.jpg')} style={[styles.home_image]} />
+                    </View>
+                </ScrollView>
             </View>
         );
     }
 }
 
 export default HomeComponent;
+
