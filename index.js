@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 // import App from './App';
-import AppWithNavigationState  from "./src2/navigators/";
-//import redux
-import { createStore, applyMiddleware  } from "redux";
-import { Provider } from "react-redux";
-import AllReducer from "./src2/reducers/";
+import AppNavigators  from "./src2/navigators/AppNavigators";
 
-//Redux saga
-import createSagaMiddleware from 'redux-saga';
-import rootSaga from './src2/sagas/rootSaga'; 
 
-const sagaMiddleware = createSagaMiddleware();
-let store = createStore(AllReducer, applyMiddleware(sagaMiddleware));
+class App extends Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
 
-const App = () =>(
-    <Provider store={store}>
-        <AppWithNavigationState/>
-    </Provider>
-)
-sagaMiddleware.run(rootSaga);
+        return (
+            <AppNavigators />
+        );
+    }
+}
+
 AppRegistry.registerComponent('xuphatgiaothong', () => App);

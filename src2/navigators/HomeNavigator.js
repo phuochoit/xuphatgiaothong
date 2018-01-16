@@ -2,16 +2,18 @@
 import React, { Component } from "react";
 import { StackNavigator } from "react-navigation";
 // Container
-import HomeContainer from "../containers/Home/HomeContainer";
-import ScooterContainer from "../containers/Home/ScooterContainer";
+import HomeComponent from "../components/Home/HomeComponent";
+import ScooterComponent from "../components/Home/ScooterComponent";
+import HomeDetailComponent from "../components/Home/HomeDetailComponent";
 
 // screenName
-import { SCOOTER,HOME } from "../values/screenName";
+import { SCOOTER, HOME, HOMEDETAIL } from "../values/screenName";
 
 const HomeNavigator = StackNavigator(
     {
-        HOME: { screen: HomeContainer },
-        SCOOTER: { screen: ScooterContainer }
+        HOME: { screen: HomeComponent },
+        SCOOTER: { screen: ScooterComponent },
+        HOMEDETAIL: { screen: HomeDetailComponent }
     },
     {
         headerMode: "none"

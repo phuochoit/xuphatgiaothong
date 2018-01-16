@@ -2,8 +2,11 @@ import React from "react";
 import { Image, View, TouchableOpacity } from "react-native";
 import { isEmpty } from "lodash";
 import { Text, Thumbnail, H3 } from "native-base";
+// style
 import { styles,thumbnail_xp} from "../../../assets/css/style";
-import { get_image_xu_phat } from "../../Service/service";
+import { get_image_xu_phat } from "../../service/service";
+// screenName
+import { HOMEDETAIL } from "../../values/screenName";
 
 class ItemsComponent extends React.Component {
     constructor(props) {
@@ -11,7 +14,7 @@ class ItemsComponent extends React.Component {
         this._onPressButton = this._onPressButton.bind(this);
     }
     _onPressButton(){
-        this.props.navigation.navigate('HomeDetail', this.props.item);
+        this.props.navigation.navigate(HOMEDETAIL, this.props.item);
     }
     render() {
         

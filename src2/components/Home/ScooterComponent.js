@@ -1,7 +1,7 @@
-// react
-import React, { Component } from 'react';
-import { Text, View, FlatList, ActivityIndicator} from 'react-native';
-
+import React from "react";
+import { FlatList, View } from "react-native";
+import SQLite from 'react-native-sqlite-storage';
+import { concat } from "lodash";
 //style
 import { styles } from '../../../assets/css/style';
 
@@ -9,31 +9,75 @@ import { styles } from '../../../assets/css/style';
 import HeaderComponent from "../Header/";
 import ItemsComponent from "./ItemsComponent";
 
-class ScooterComponent extends Component {
-    constructor(props){
+let db = SQLite.openDatabase({ name: 'atgt.sqlite', createFromLocation: "~atgt.sqlite", location: 'Library' });
+
+class ScooterComponent extends React.Component {
+    constructor(props) {
         super(props);
         this.state = ({
-            items: 20,
-            refreshing: false,
+            scooter: [],
+            page: 0,
+            refreshing: false
         });
 
+        this._getdata = this._getdata.bind(this);
         this._onEndReached = this._onEndReached.bind(this);
         this._onRefresh = this._onRefresh.bind(this);
+
     }
+
+    componentDidMount() {
+        this._getdata();
+    }
+    _getdata() {
+        let record = [];
+        db.transaction((tx) => {
+            tx.executeSql('SELECT * FROM Xuphat where loai_xe = 2 ORDER BY ten_loi asc limit 0,20', [], (tx, results) => {
+                let len = results.rows.length;
+                for (let i = 0; i < len; i++) {
+                    let row = results.rows.item(i);
+                    record[i] = row;
+                }
+                this.setState({
+                    scooter: record,
+                    page: 20
+                });
+            });
+        }, null, null);
+    }
+
     _onEndReached() {
-        this.setState({ items: (this.state.items + 20) });
-        this.props.onFetchMoreScooter(this.state.items);
+        let new_record = [];
+        db.transaction((tx) => {
+            tx.executeSql('SELECT * FROM Xuphat where loai_xe = 2 ORDER BY ten_loi asc limit ' + this.state.page + ',20', [], (tx, results) => {
+                let len = results.rows.length;
+                if (len > 0) {
+                    for (let i = 0; i < len; i++) {
+                        let row = results.rows.item(i);
+                        new_record[i] = row;
+                    }
+                    this.setState({
+                        scooter: concat(this.state.scooter, new_record),
+                        page: this.state.page + 20
+                    });
+                }
+
+            });
+        }, null, null);
     }
-    _onRefresh(){
-        console.log('_onRefresh');
-    }
-    componentDidMount(){
-        this.props.onFetchScooter();
+    _onRefresh() {
+        this.setState({
+            refreshing: true,
+        });
+        this._getdata();
+        this.setState({
+            refreshing: false,
+        });
     }
     render() {
-        
+
         return (
-            <View style={[styles.background, styles.flex1]}>
+            <View style={[styles.flex1, styles.background]}>
                 <HeaderComponent {...this.props} title="Lỗi Vi Phạm Xe Máy" icon_home={true} go_back={true} />
                 <FlatList
                     ListHeaderComponent={() => {
@@ -42,7 +86,7 @@ class ScooterComponent extends Component {
                     ListFooterComponent={() => {
                         return (<View style={[styles.height10]} />);
                     }}
-                    data={this.props.scooter}
+                    data={this.state.scooter}
                     renderItem={({ item, index }) => {
                         return (
                             <ItemsComponent item={item} index={index} navigation={this.props.navigation} />
@@ -55,6 +99,7 @@ class ScooterComponent extends Component {
                     refreshing={this.state.refreshing}
                 />
             </View>
+
         );
     }
 }

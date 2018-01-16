@@ -301,6 +301,16 @@ export const styles = StyleSheet.create({
     },
     home_scrollView_view: {
         marginBottom: 10
-    }
+    },
+
+    // /deatail 
+
+    deatail_image_ads: {
+        width: 'auto',
+        height: (width / 3) - 10,
+        resizeMode: 'contain',
+        justifyContent:'center',
+        alignItems: 'center',
+    },
 });
 
