@@ -78,7 +78,7 @@ class ScooterComponent extends React.Component {
 
         return (
             <View style={[styles.flex1, styles.background]}>
-                <HeaderComponent {...this.props} title="Lỗi Vi Phạm Xe Máy" icon_home={true} go_back={true} />
+                <HeaderComponent navigation={this.props.navigation} title="Lỗi Vi Phạm Xe Máy" icon_home={true} go_back={true} />
                 <FlatList
                     ListHeaderComponent={() => {
                         return (<View style={[styles.height10]} />);
