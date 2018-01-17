@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions, Image, Platform } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 export const deviceHeight = Dimensions.get("window").height;
-const deviceWidth = Dimensions.get("window").width;
+export const deviceWidth = Dimensions.get("window").width;
 
 export const colormenu = "#407ED2";
 export const colorbutton = "#ED1B24";
@@ -16,6 +16,9 @@ const padding = 10;
 const fontcolor = '#333';
 
 export const styles = StyleSheet.create({
+    flex0:{
+        flex: 0
+    },
     flex1: {
         flex: 1
     },
@@ -160,7 +163,12 @@ export const styles = StyleSheet.create({
     tab_items_icon: {
         width: 20,
         height: 20,
-        tintColor:'#fff'
+        tintColor:'#000'
+    },
+    tab_items_icon_active: {
+        width: 20,
+        height: 20,
+        tintColor: colormenu
     },
     sidebar_items_title: {
         color: colorbgbox,
@@ -312,5 +320,26 @@ export const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems: 'center',
     },
+
+    // more
+    ideas_image: {
+        width: width, 
+        height: (width /2),
+        flex:1       
+    },
+
+    //search 
+    box_wraper_item: { 
+        flex: 0, 
+        marginBottom: 10,
+        borderRadius: 6 
+    },
+    box_item: { 
+        flex: 1, 
+        flexDirection: 'row', 
+        backgroundColor: '#fff', 
+        paddingHorizontal: 10, 
+        paddingVertical: 5 
+    }
 });
 

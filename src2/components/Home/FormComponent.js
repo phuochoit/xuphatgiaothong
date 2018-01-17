@@ -8,31 +8,33 @@ import { styles } from '../../../assets/css/style';
 //component
 import HeaderComponent from "../Header/";
 import ItemsComponent from "./ItemsComponent";
+import LoadingComponent from "../loading";
 
 let db = SQLite.openDatabase({ name: 'atgt.sqlite', createFromLocation: "~atgt.sqlite", location: 'Library' });
 
-class ScooterComponent extends React.Component {
+class FormComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = ({
             scooter: [],
             page: 0,
-            refreshing: false
+            refreshing: false,
+            loading: false
         });
 
         this._getdata = this._getdata.bind(this);
         this._onEndReached = this._onEndReached.bind(this);
         this._onRefresh = this._onRefresh.bind(this);
-
     }
 
     componentDidMount() {
         this._getdata();
     }
     _getdata() {
+        this.setState({ loading: true });
         let record = [];
         db.transaction((tx) => {
-            tx.executeSql('SELECT * FROM Xuphat where loai_xe = 2 ORDER BY ten_loi asc limit 0,20', [], (tx, results) => {
+            tx.executeSql('SELECT * FROM Xuphat where loai_xe = ' + this.props.navigation.state.params.loai_xe + ' ORDER BY ten_loi asc limit 0,20', [], (tx, results) => {
                 let len = results.rows.length;
                 for (let i = 0; i < len; i++) {
                     let row = results.rows.item(i);
@@ -40,7 +42,8 @@ class ScooterComponent extends React.Component {
                 }
                 this.setState({
                     scooter: record,
-                    page: 20
+                    page: 20,
+                    loading: false
                 });
             });
         }, null, null);
@@ -49,7 +52,7 @@ class ScooterComponent extends React.Component {
     _onEndReached() {
         let new_record = [];
         db.transaction((tx) => {
-            tx.executeSql('SELECT * FROM Xuphat where loai_xe = 2 ORDER BY ten_loi asc limit ' + this.state.page + ',20', [], (tx, results) => {
+            tx.executeSql('SELECT * FROM Xuphat where loai_xe = ' + this.props.navigation.state.params.loai_xe + ' ORDER BY ten_loi asc limit ' + this.state.page + ',20', [], (tx, results) => {
                 let len = results.rows.length;
                 if (len > 0) {
                     for (let i = 0; i < len; i++) {
@@ -75,10 +78,33 @@ class ScooterComponent extends React.Component {
         });
     }
     render() {
+        let title = null;
+        switch (this.props.navigation.state.params.loai_xe) {
+            case 2:
+                title = 'Lỗi Vi Phạm Xe Máy';
+                break;
+
+            case 33:
+                title = 'Lỗi Vi Phạm Xe Tải';
+                break;
+            case 22:
+                title = 'Lỗi Vi Phạm Xe Khách';
+                break;
+            case 1:
+                title = 'Lỗi Vi Phạm Xe Ô TÔ';
+                break;
+        }
+        if (this.state.loading)
+            return (
+                <View style={[styles.flex1, styles.background]}>
+                    <HeaderComponent navigation={this.props.navigation} title={title} icon_home={true} go_back={true} />
+                    <LoadingComponent />
+                </View>
+            );
 
         return (
             <View style={[styles.flex1, styles.background]}>
-                <HeaderComponent navigation={this.props.navigation} title="Lỗi Vi Phạm Xe Máy" icon_home={true} go_back={true} />
+                <HeaderComponent navigation={this.props.navigation} title={title} icon_home={true} go_back={true} />
                 <FlatList
                     ListHeaderComponent={() => {
                         return (<View style={[styles.height10]} />);
@@ -104,4 +130,4 @@ class ScooterComponent extends React.Component {
     }
 }
 
-export default ScooterComponent;
+export default FormComponent;

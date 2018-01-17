@@ -39,6 +39,28 @@ export const myTab = ({
     tabTextColor: "#000",
 });
 
+export const myFooter = ({
+   // FooterTab
+    tabBarTextColor: "#000",
+    tabBarTextSize: platform === "ios" ? 14 : 11,
+    activeTab: "#007aff",
+    sTabBarActiveTextColor: "#007aff",
+    tabBarActiveTextColor: "#007aff",
+    tabActiveBgColor: undefined,
+});
+//   // Footer
+//   footerHeight: isIphoneX ? 89 : 55,
+//   
+//   footerPaddingBottom: isIphoneX ? 34 : 0,
+
+//   // FooterTab
+//   tabBarTextColor: "#b3c7f9",
+//   tabBarTextSize: platform === "ios" ? 14 : 11,
+//   activeTab: "#fff",
+//   sTabBarActiveTextColor: "#007aff",
+//   tabBarActiveTextColor: "#fff",
+//   tabActiveBgColor: undefined,
+
 // export default {
 //   platformStyle,
 //   platform,
