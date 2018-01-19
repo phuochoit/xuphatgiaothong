@@ -7,11 +7,12 @@ import { styles, background2FB8FE } from "../../assets/css/style";
 
 import HomeNavigator from "./HomeNavigator";
 import NoticeBoardNavigator from "./NoticeBoardNavigator";
+import SearchNavigator from "./SearchNavigator";
 
 import HotCallComponent from "../components/HotCall/HotCallComponent";
-import SearchComponent from "../components/Search/SearchComponent";
 import MoreComponent from "../components/More/MoreComponent";
 
+import FabScreen from "../components/fab";
 import { HOME, HOTCALL, MORE, NOTICEBOARD, SEARCH } from "../values/screenName";
 
 
@@ -20,7 +21,7 @@ export default (AppNavigators = TabNavigator(
         HOME: { screen: HomeNavigator },
         NOTICEBOARD: { screen: NoticeBoardNavigator },
         HOTCALL: { screen: HotCallComponent },
-        SEARCH: { screen: SearchComponent },
+        SEARCH: { screen: SearchNavigator },
         MORE: { screen: MoreComponent },
     },
     {
@@ -30,6 +31,7 @@ export default (AppNavigators = TabNavigator(
         tabBarComponent: props => {
             return (
                 <View>
+                    <FabScreen/>
                     <View style={{
                         height: 1,
                         backgroundColor: "#407ED2",

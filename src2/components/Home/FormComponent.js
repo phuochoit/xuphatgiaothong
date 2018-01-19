@@ -9,7 +9,7 @@ import { styles } from '../../../assets/css/style';
 import HeaderComponent from "../Header/";
 import ItemsComponent from "./ItemsComponent";
 import LoadingComponent from "../loading";
-
+import { AdMobBannerContent, AdMobBannerHeader } from "../admob";
 let db = SQLite.openDatabase({ name: 'atgt.sqlite', createFromLocation: "~atgt.sqlite", location: 'Library' });
 
 class FormComponent extends React.Component {
@@ -105,12 +105,13 @@ class FormComponent extends React.Component {
         return (
             <View style={[styles.flex1, styles.background]}>
                 <HeaderComponent navigation={this.props.navigation} title={title} icon_home={true} go_back={true} />
+                
                 <FlatList
                     ListHeaderComponent={() => {
-                        return (<View style={[styles.height10]} />);
+                        return (<AdMobBannerHeader bannerSize="banner" />);
                     }}
                     ListFooterComponent={() => {
-                        return (<View style={[styles.height10]} />);
+                        return (<AdMobBannerContent bannerSize="mediumRectangle" />);
                     }}
                     data={this.state.scooter}
                     renderItem={({ item, index }) => {

@@ -3,7 +3,7 @@ import { Button, Icon, View, Fab } from 'native-base';
 import { Linking} from 'react-native'
 
 import { styles, colormenu } from "../../assets/css/style";
-import { facebook_share, google_plus } from "../Service/string";
+import { facebook_share, google_plus } from "../service/string";
 import { AdMobBannerFooter } from "./admob";
 const count_back = 5;
 class FabScreen extends Component {
@@ -25,9 +25,17 @@ class FabScreen extends Component {
         });
     }
     _OnClickFackbook = () => {
+        this.setState({
+            active: !this.state.active,
+            style: !this.state.style
+        });
         Linking.openURL(facebook_share).catch(err => console.error('An error occurred', err));
     }
     _OnClickGoogleplus = () => {
+        this.setState({
+            active: !this.state.active,
+            style: !this.state.style
+        });
         Linking.openURL(google_plus).catch(err => console.error('An error occurred', err));
     }
     render() {
@@ -54,7 +62,7 @@ class FabScreen extends Component {
                         <Icon name="logo-googleplus" />
                     </Button>
                 </Fab>
-                <AdMobBannerFooter bannerSize="fullBanner" />
+                <AdMobBannerFooter bannerSize="banner" />
             </View>
         );
     }

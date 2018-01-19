@@ -4,7 +4,7 @@ import { H3,Thumbnail } from "native-base";
 import { styles, thumbnail_xp } from "../../../assets/css/style";
 import { get_image_bb } from "../../service/service";
 
-class ItemsComponent extends React.Component {
+class NoticeBoardItemsComponent extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -25,4 +25,4 @@ class ItemsComponent extends React.Component {
         );
     }
 }
-export default ItemsComponent;
+export default NoticeBoardItemsComponent;

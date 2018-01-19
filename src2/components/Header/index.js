@@ -19,7 +19,6 @@ class HeaderComponent extends React.Component {
     }
     componentDidMount() {
         BackHandler.addEventListener("hardwareBackPress", this._onBackPress);
-        console.log('componentDidMount', number_back);
     }
     componentWillUnmount() {
         BackHandler.removeEventListener("hardwareBackPress", this._onBackPress);
@@ -41,7 +40,6 @@ class HeaderComponent extends React.Component {
     }
     _ongoBack(){
         number_back++;
-        console.log('this.state.show_ads', number_back);
         if (number_back == 2) {
             this.setState({
                 show_ads: true

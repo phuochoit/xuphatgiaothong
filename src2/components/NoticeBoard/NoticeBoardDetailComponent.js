@@ -5,8 +5,9 @@ import SQLite from 'react-native-sqlite-storage';
 import { styles } from "../../../assets/css/style";
 
 import HeaderComponent from "../Header/";
-import ItemsComponent from "./ItemsComponent";
+import NoticeBoardItemsComponent from "./NoticeBoardItemsComponent";
 import LoadingComponent from "../loading";
+import { AdMobBannerContent, AdMobBannerHeader } from "../admob";
 
 let db = SQLite.openDatabase({ name: 'atgt.sqlite', createFromLocation: "~atgt.sqlite", location: 'Library' });
 
@@ -87,15 +88,15 @@ class NoticeBoardDetailComponent extends Component {
                 <HeaderComponent navigation={this.props.navigation} title={title} icon_home={false} go_back={true} />
                 <FlatList
                     ListHeaderComponent={() => {
-                        return (<View style={[styles.height10]} />);
+                        return (<AdMobBannerHeader bannerSize="banner" />);
                     }}
                     ListFooterComponent={() => {
-                        return (<View style={[styles.height10]} />);
+                        return (<AdMobBannerContent bannerSize="mediumRectangle" />);
                     }}
                     data={this.state.data}
                     renderItem={({ item, index }) => {
                         return (
-                            <ItemsComponent item={item} index={index} navigation={this.props.navigation} />
+                            <NoticeBoardItemsComponent item={item} index={index} navigation={this.props.navigation} />
                         );
                     }}
                     keyExtractor={item => item.id}

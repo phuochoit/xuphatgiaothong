@@ -136,6 +136,7 @@ class HomeDetailComponent extends Component {
                         <Icon ios='ios-list-outline' android="ios-list" style={[styles.detail_xp_menu_icon]} />
                         <Text style={[styles.detail_xp_menu_title]}>Hành Vi Liên Quan</Text>
                     </View>
+                    <AdMobBannerContent bannerSize="mediumRectangle" />
                     <FlatList
                         ListHeaderComponent={() => {
                             return (<View style={[styles.height10]} />);

@@ -3,6 +3,7 @@ import { Text, View, ScrollView, TouchableOpacity, Linking, Image} from 'react-n
 import { Card, CardItem, Thumbnail, Left, Body } from 'native-base';
 //component
 import HeaderComponent from "../Header/";
+import { AdMobBannerContent, AdMobBannerHeader } from "../admob";
 //styles
 import { styles } from '../../../assets/css/style';
 
@@ -17,6 +18,7 @@ class MoreComponent extends Component {
             <View style={[styles.background, styles.flex1]}>
                 <HeaderComponent navigation={this.props.navigation} title="Nhiều Hơn" icon_home={true} go_back="" />
                 <ScrollView style={[styles.home_scrollView]}>
+                    <AdMobBannerHeader bannerSize="banner" />
                     <Card style={[styles.flex0]}>
                             <CardItem>
                                 <Left>
@@ -51,7 +53,7 @@ class MoreComponent extends Component {
                             </CardItem>
                         </TouchableOpacity>
                     </Card>
-
+                    
                     <Card style={[styles.flex0]}>
                         <TouchableOpacity onPress={() => {
                             Linking.openURL(developer_google).catch(err => console.error('An error occurred', err));
@@ -66,7 +68,7 @@ class MoreComponent extends Component {
                             </CardItem>
                         </TouchableOpacity>
                     </Card>
-
+                    <AdMobBannerContent bannerSize="mediumRectangle" />
                 </ScrollView>
             </View>
         );

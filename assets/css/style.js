@@ -161,13 +161,13 @@ export const styles = StyleSheet.create({
         height: 40
     },
     tab_items_icon: {
-        width: 20,
-        height: 20,
+        width: 25,
+        height: 25,
         tintColor:'#000'
     },
     tab_items_icon_active: {
-        width: 20,
-        height: 20,
+        width: 25,
+        height: 25,
         tintColor: colormenu
     },
     sidebar_items_title: {

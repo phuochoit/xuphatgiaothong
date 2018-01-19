@@ -3,6 +3,8 @@ import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { Card, CardItem, Thumbnail, Left, Body } from 'native-base';
 //component
 import HeaderComponent from "../Header/";
+import { AdMobBannerContent, AdMobBannerHeader } from "../admob";
+
 //styles
 import { styles } from '../../../assets/css/style';
 
@@ -15,6 +17,7 @@ class NoticeBoardComponent extends Component {
             <View style={[styles.background, styles.flex1]}>
                 <HeaderComponent navigation={this.props.navigation} title="Biển Báo" icon_home={true} go_back="" />
                 <ScrollView style={[styles.home_scrollView]}>
+                    <AdMobBannerHeader bannerSize="banner" />
                     <Card style={[styles.flex0]}>
                         <TouchableOpacity onPress={() => {
                             this.props.navigation.navigate(NOTICEBOARDDETAIL, { loai_xe: 1 });
@@ -85,6 +88,7 @@ class NoticeBoardComponent extends Component {
                             </CardItem>
                         </TouchableOpacity>
                     </Card>
+                    <AdMobBannerContent bannerSize="mediumRectangle" />
                 </ScrollView>
             </View>
         );
