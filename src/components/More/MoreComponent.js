@@ -62,7 +62,7 @@ class MoreComponent extends Component {
                                 <Left>
                                     <Thumbnail source={require('../../../assets/images/icon_more.png')} />
                                     <Body>
-                                        <Text>Ứng Dụng Khách</Text>
+                                        <Text>Ứng Dụng Khác</Text>
                                     </Body>
                                 </Left>
                             </CardItem>

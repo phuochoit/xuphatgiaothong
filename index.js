@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 // import App from './App';
-import AppNavigators  from "./src2/navigators/AppNavigators";
+import AppNavigators  from "./src/navigators/AppNavigators";
 
 
 class App extends Component {

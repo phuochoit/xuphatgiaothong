@@ -10,6 +10,22 @@ import {
 const BANNER_FOOTER = 'ca-app-pub-1070789846238739/2395901196';
 export const BANNER_FULL = 'ca-app-pub-1070789846238739/5771328983';
 const BANNER_CONTNET = 'ca-app-pub-1070789846238739/3816083639';
+const BANNER_HEADER = 'ca-app-pub-1070789846238739/1196845454';
+
+export class AdMobBannerHeader extends React.Component {
+    render() {
+        return (
+            <View style={{ alignItems: 'center', marginTop: 5, position: 'absolute', bottom: 0, right: 0, left: 0 }}>
+                <AdMobBanner
+                    adSize={this.props.bannerSize}
+                    adUnitID={BANNER_HEADER}
+                    testDevices={[AdMobBanner.simulatorId]}
+                    onAdFailedToLoad={error => console.error(error)}
+                />
+            </View>
+        )
+    }
+}
 
 export class AdMobBannerContent extends React.Component {
     render() {
@@ -25,7 +41,6 @@ export class AdMobBannerContent extends React.Component {
         )
     }
 }
-
 
 export class AdMobBannerFooter extends React.Component {
     render() {
