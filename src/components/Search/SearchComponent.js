@@ -13,8 +13,8 @@ class SearchComponent extends Component {
         return (
             <View style={[styles.background, styles.flex1]}>
                 <HeaderComponent navigation={this.props.navigation} title="Tìm Kiếm" icon_home={true} go_back="" />
+                <AdMobBannerHeader bannerSize="banner" />
                 <ScrollView style={[styles.home_scrollView]}>
-                    <AdMobBannerHeader bannerSize="banner" />
                     <Card style={[styles.flex0]}>
                         <TouchableOpacity onPress={() => {
                             this.props.navigation.navigate(SEARCHDETAIL, { table_name: 'Xuphat', search_title: 'Lỗi Vi Phạm' });

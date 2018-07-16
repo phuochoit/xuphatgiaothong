@@ -62,7 +62,6 @@ class FabScreen extends Component {
                         <Icon name="logo-googleplus" />
                     </Button>
                 </Fab>
-                <AdMobBannerFooter bannerSize="banner" />
             </View>
         );
     }

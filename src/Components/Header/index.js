@@ -1,17 +1,22 @@
 import React from "react";
 import { View, BackHandler } from "react-native";
 import { Header, Left, Right, Title,  Button, Body, Icon, StyleProvider, getTheme} from "native-base";
-// import { AdMobInterstitial } from 'react-native-admob';
+import firebase from 'react-native-firebase';
 
 import { styles, colorbgbox } from "../../../assets/css/style";
 import { myThemeHeader } from "../../../assets/css/my_material";
-let number_back = 0;
+import {ADS_BANNER_INTERSTITIAL_ID} from "../../Service/string";
+
+var number_back = 0;
+const advert = firebase.admob().interstitial(ADS_BANNER_INTERSTITIAL_ID);
+const AdRequest = firebase.admob.AdRequest;
+const request = new AdRequest();
+advert.loadAd(request.build());
 
 class HeaderComponent extends React.Component {
     constructor(props){
         super(props);
         this.state = ({
-            show_ads: false
         });
         this._onBackPress = this._onBackPress.bind(this);
         this._ongoBack = this._ongoBack.bind(this);
@@ -26,39 +31,22 @@ class HeaderComponent extends React.Component {
 
     _onBackPress() {
         number_back++;
+        // 
         if (number_back == 4) {
-            this.setState({
-                show_ads: true
-            });
+            advert.show();
+            console.log('number_back', number_back);
             number_back = 0;
-        }
-        if (number_back == 0) {
-            this.setState({
-                show_ads: false
-            });
         }
     }
     _ongoBack(){
         number_back++;
-        if (number_back == 2) {
-            this.setState({
-                show_ads: true
-            });
+        if (number_back == 4) {
+            advert.show();
             number_back = 0;
-        }
-        if (number_back == 0) {
-            this.setState({
-                show_ads: false
-            });
         }
         this.props.navigation.goBack();
     }
     render() {  
-        // if (this.state.show_ads) {
-        //     AdMobInterstitial.setAdUnitID('ca-app-pub-1070789846238739/5771328983');
-        //     AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
-        //     AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd());
-        // }
         button_left = <View />;
         if(this.props.go_back){
             button_left = (

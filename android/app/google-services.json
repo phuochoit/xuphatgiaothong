@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "943200823287",
+    "firebase_url": "https://loi-vi-pham-xu-phat-giao-thong.firebaseio.com",
+    "project_id": "loi-vi-pham-xu-phat-giao-thong",
+    "storage_bucket": "loi-vi-pham-xu-phat-giao-thong.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943200823287:android:0b07a1629675adb7",
+        "android_client_info": {
+          "package_name": "com.phuochoit.xuphatgiaothong"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943200823287-oq94uiumohlsomelokcs0ci2fe5470g2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQeJsoqtLcExYkcyDmkNcLjOHK9vuiNdk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

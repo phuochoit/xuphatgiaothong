@@ -1,73 +1,66 @@
 import React from "react";
 import { View , Text} from "react-native";
+import firebase from 'react-native-firebase';
+
+import { ADS_BANNER_HEADER_ID,ADS_BANNER_FOOTER_ID, ADS_BANNER_CONTNET_ID, ADS_BANNER_INTERSTITIAL_ID} from "../Service/string";
 
 
-const BANNER_FOOTER = 'ca-app-pub-1070789846238739/2395901196';
-export const BANNER_FULL = 'ca-app-pub-1070789846238739/5771328983';
-const BANNER_CONTNET = 'ca-app-pub-1070789846238739/3816083639';
-const BANNER_HEADER = 'ca-app-pub-1070789846238739/1196845454';
+const Banner = firebase.admob.Banner;
+const AdRequest = firebase.admob.AdRequest;
+const request = new AdRequest();
 
-export class AdMobBannerHeader extends React.Component {
-    render() {
-        return (
-            <View style={{ alignItems: 'center', marginVertical: 5 }}>
-                <Text>AdMobBannerHeader</Text>
-                {/* <AdMobBanner
-                    adSize={this.props.bannerSize}
-                    adUnitID={BANNER_HEADER}
-                    testDevices={[AdMobBanner.simulatorId]}
-                    onAdFailedToLoad={error => console.error(error)}
-                /> */}
-            </View>
-        )
-    }
+export const AdMobBannerHeader = () => {
+    return (
+        <View style={{ alignItems: 'center', marginTop: 2, marginBottom: 5, justifyContent: 'center' }}>
+            <Banner
+                size={"SMART_BANNER"}
+                unitId={ADS_BANNER_HEADER_ID}
+                request={request.build()}
+                onAdLoaded={() => {}}
+                onAdFailedToLoad={(error) => {}}
+            />
+        </View>
+    );
 }
 
-export class AdMobBannerContent extends React.Component {
-    render() {
-        return (
-            <View style={{ alignItems: 'center', marginTop: 5 }}>
-                <Text>AdMobBannerContent</Text>
-                {/* <AdMobBanner
-                    adSize={this.props.bannerSize}
-                    adUnitID={BANNER_CONTNET}
-                    testDevices={[AdMobBanner.simulatorId]}
-                    onAdFailedToLoad={error => console.error(error)}
-                /> */}
-            </View>
-        )
-    }
+export const AdMobBannerFooter = () => {
+    return (
+        <View style={{ alignItems: 'center', marginTop: 2, marginBottom: 5, justifyContent: 'center' }}>
+            <Banner
+                size={"SMART_BANNER"}
+                unitId={ADS_BANNER_FOOTER_ID}
+                request={request.build()}
+                onAdLoaded={() => {}}
+                onAdFailedToLoad={(error) => {}}
+            />
+        </View>
+    );
 }
 
-export class AdMobBannerFooter extends React.Component {
-    render() {
-        return (
-            <View style={{ alignItems: 'center', marginTop: 5, position: 'absolute', bottom:0, right:0, left:0 }}>
-                <Text>BANNER_FOOTER</Text>
-                {/* <AdMobBanner
-                    adSize={this.props.bannerSize}
-                    adUnitID={BANNER_FOOTER}
-                    testDevices={[AdMobBanner.simulatorId]}
-                    onAdFailedToLoad={error => console.error(error)}
-                /> */}
-            </View>
-        )
-    }
+export const AdMobBannerContent = () => {
+    return (
+        <View style={{ alignItems: 'center', marginTop: 2, marginBottom: 5, justifyContent: 'center' }}>
+            <Banner
+                size={"MEDIUM_RECTANGLE"}
+                unitId={ADS_BANNER_CONTNET_ID}
+                request={request.build()}
+                onAdLoaded={() => {}}
+                onAdFailedToLoad={(error) => {}}
+            />
+        </View>
+    );
 }
 
-export class AdMobBannerFull extends React.Component {
-    render() {
-        return (
-            <View style={{ alignItems: 'center', marginTop: 5 }}>
-                <Text>BANNER_FULL</Text>
-                {/* <AdMobBanner
-                    adSize="fullBanner"
-                    adUnitID={BANNER_FULL}
-                    testDevices={[AdMobBanner.simulatorId]}
-                    onAdFailedToLoad={error => console.error(error)}
-                /> */}
-            </View>
-        )
-    }
+export const AdMobBannerFull = () => {
+    return (
+        <View style={{ alignItems: 'center', marginTop: 2, marginBottom: 5, justifyContent: 'center' }}>
+            <Banner
+                size={"MEDIUM_RECTANGLE"}
+                unitId={ADS_BANNER_CONTNET_ID}
+                request={request.build()}
+                onAdLoaded={() => {}}
+                onAdFailedToLoad={(error) => {}}
+            />
+        </View>
+    );
 }
-

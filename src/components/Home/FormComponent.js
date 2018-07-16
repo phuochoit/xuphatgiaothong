@@ -34,7 +34,7 @@ class FormComponent extends React.Component {
         this.setState({ loading: true });
         let record = [];
         db.transaction((tx) => {
-            tx.executeSql('SELECT * FROM Xuphat where loai_xe = ' + this.props.navigation.state.params.loai_xe + ' ORDER BY ten_loi asc limit 0,20', [], (tx, results) => {
+            tx.executeSql('SELECT * FROM Xuphat where loai_xe = ' + this.props.navigation.state.params.loai_xe + ' ORDER BY ten_loi asc limit 0,10', [], (tx, results) => {
                 let len = results.rows.length;
                 for (let i = 0; i < len; i++) {
                     let row = results.rows.item(i);
@@ -52,7 +52,7 @@ class FormComponent extends React.Component {
     _onEndReached() {
         let new_record = [];
         db.transaction((tx) => {
-            tx.executeSql('SELECT * FROM Xuphat where loai_xe = ' + this.props.navigation.state.params.loai_xe + ' ORDER BY ten_loi asc limit ' + this.state.page + ',20', [], (tx, results) => {
+            tx.executeSql('SELECT * FROM Xuphat where loai_xe = ' + this.props.navigation.state.params.loai_xe + ' ORDER BY ten_loi asc limit ' + this.state.page + ',10', [], (tx, results) => {
                 let len = results.rows.length;
                 if (len > 0) {
                     for (let i = 0; i < len; i++) {
@@ -61,7 +61,7 @@ class FormComponent extends React.Component {
                     }
                     this.setState({
                         scooter: concat(this.state.scooter, new_record),
-                        page: this.state.page + 20
+                        page: this.state.page + 10
                     });
                 }
 
@@ -105,11 +105,11 @@ class FormComponent extends React.Component {
         return (
             <View style={[styles.flex1, styles.background]}>
                 <HeaderComponent navigation={this.props.navigation} title={title} icon_home={true} go_back={true} />
-                
+                <AdMobBannerHeader bannerSize="banner" />
                 <FlatList
-                    ListHeaderComponent={() => {
-                        return (<AdMobBannerHeader bannerSize="banner" />);
-                    }}
+                    // ListHeaderComponent={() => {
+                    //     return ();
+                    // }}
                     data={this.state.scooter}
                     renderItem={({ item, index }) => {
                         return (

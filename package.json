@@ -11,6 +11,7 @@
         "native-base": "^2.3.4",
         "react": "16.0.0",
         "react-native": "0.51.0",
+        "react-native-firebase": "^4.3.7",
         "react-native-splash-screen": "^3.0.6",
         "react-native-sqlite-storage": "^3.3.4",
         "react-native-swipeout": "^2.3.3",

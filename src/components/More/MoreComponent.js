@@ -17,8 +17,8 @@ class MoreComponent extends Component {
         return (
             <View style={[styles.background, styles.flex1]}>
                 <HeaderComponent navigation={this.props.navigation} title="Nhiều Hơn" icon_home={true} go_back="" />
+                <AdMobBannerHeader bannerSize="banner" />
                 <ScrollView style={[styles.home_scrollView]}>
-                    <AdMobBannerHeader bannerSize="banner" />
                     <Card style={[styles.flex0]}>
                             <CardItem>
                                 <Left>
