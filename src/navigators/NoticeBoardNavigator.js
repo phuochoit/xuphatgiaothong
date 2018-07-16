@@ -2,8 +2,8 @@
 import React, { Component } from "react";
 import { StackNavigator } from "react-navigation";
 // Container
-import NoticeBoardComponent from "../components/NoticeBoard/NoticeBoardComponent";
-import NoticeBoardDetailComponent from "../components/NoticeBoard/NoticeBoardDetailComponent";
+import NoticeBoardComponent from "../Components/NoticeBoard/NoticeBoardComponent";
+import NoticeBoardDetailComponent from "../Components/NoticeBoard/NoticeBoardDetailComponent";
 
 // screenName
 import { NOTICEBOARD, NOTICEBOARDDETAIL } from "../values/screenName";

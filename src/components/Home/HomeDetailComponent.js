@@ -4,7 +4,7 @@ import { Text, Thumbnail, Content, Icon } from "native-base";
 import { isEmpty, isNull } from "lodash";
 import SQLite from 'react-native-sqlite-storage';
 
-import { AdMobBannerContent } from "../admob";
+import { AdMobBannerContent, AdMobBannerHeader } from "../admob";
 //style
 import { styles, thumbnail_xp } from "../../../assets/css/style";
 
@@ -13,7 +13,7 @@ import HeaderComponent from "../Header/";
 import ItemsComponent from "./ItemsComponent";
 import LoadingComponent from "../loading";
 // service
-import { get_image_xu_phat } from "../../service/service";
+import { get_image_xu_phat } from "../../Service/service";
 
 let db = SQLite.openDatabase({ name: 'atgt.sqlite', createFromLocation: "~atgt.sqlite" });
 
@@ -22,32 +22,19 @@ class HomeDetailComponent extends Component {
         super(props);
         this.state = ({
             result: null,
-            resultAdsId: null,
             loading: false
         });
 
         this._getData = this._getData.bind(this);
-        this._getDataAds = this._getDataAds.bind(this);
     }
     componentWillMount() {
-        this._getDataAds();
         this._getData();
         
     }
     componentDidMount() {
 
     }
-    _getDataAds() {
-        this.setState({ loading: true});
-        db.transaction((tx) => {
-            tx.executeSql('SELECT * FROM quang_cao ORDER BY RANDOM() LIMIT 1', [], (tx, results) => {
-                this.setState({
-                    resultAdsId: results.rows.item(0),
-                    loading: false
-                });
-            });
-        }, null, null);
-    }
+
     _getData() {
         let record = []
         db.transaction((tx) => {
@@ -68,7 +55,7 @@ class HomeDetailComponent extends Component {
     }
     render() {
 
-        const { resultAdsId, loading } = this.state;
+        const { loading } = this.state;
         const { params } = this.props.navigation.state;
         image_group = get_image_xu_phat(params.group_value, params.loai_xe);
         phat_bo_sung = null;
@@ -90,11 +77,11 @@ class HomeDetailComponent extends Component {
                 </View>
             );
         
-        const imagelink = resultAdsId.link_image;
         return (
             <View style={[styles.flex1, styles.background]}>
                 <HeaderComponent navigation={this.props.navigation} title={params.ten_loi} icon_home={false} go_back={true} />
                 <Content style={[styles.flex1, styles.detail_xp_wacrapt]}>
+                    <AdMobBannerHeader bannerSize="banner" />
                     <View style={[styles.detail_xp_box, styles.flex_row]}>
                         <View style={[styles.item_xp_left, { flex: 2 }]}>
                             <Thumbnail square style={[styles.detail_xp_left_icon]} source={image_group} />
@@ -124,15 +111,7 @@ class HomeDetailComponent extends Component {
                             <Text style={[styles.detail_xp_text_bold]}> {params.muc_phat}</Text>
                         </Text>
                     </View>
-                    <TouchableOpacity onPress={() => {
-                        Linking.openURL(resultAdsId.url).catch(err => console.error('An error occurred', err));
-                    }}>
-                        <Image
-                            style={[styles.deatail_image_ads]}
-                            source={{ uri: imagelink }}
-                        />
-                    </TouchableOpacity>
-                    <View style={[styles.detail_xp_menuhv]}>
+                       <View style={[styles.detail_xp_menuhv]}>
                         <Icon ios='ios-list-outline' android="ios-list" style={[styles.detail_xp_menu_icon]} />
                         <Text style={[styles.detail_xp_menu_title]}>Hành Vi Liên Quan</Text>
                     </View>

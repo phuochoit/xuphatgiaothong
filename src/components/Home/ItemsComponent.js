@@ -4,7 +4,7 @@ import { isEmpty } from "lodash";
 import { Text, Thumbnail, H3 } from "native-base";
 // style
 import { styles,thumbnail_xp} from "../../../assets/css/style";
-import { get_image_xu_phat } from "../../service/service";
+import { get_image_xu_phat } from "../../Service/service";
 // screenName
 import { HOMEDETAIL } from "../../values/screenName";
 

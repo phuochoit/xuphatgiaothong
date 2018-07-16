@@ -88,7 +88,7 @@ class NoticeBoardComponent extends Component {
                             </CardItem>
                         </TouchableOpacity>
                     </Card>
-                    <AdMobBannerContent bannerSize="mediumRectangle" />
+                    
                 </ScrollView>
             </View>
         );

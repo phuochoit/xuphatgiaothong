@@ -9,10 +9,10 @@ import HomeNavigator from "./HomeNavigator";
 import NoticeBoardNavigator from "./NoticeBoardNavigator";
 import SearchNavigator from "./SearchNavigator";
 
-import HotCallComponent from "../components/HotCall/HotCallComponent";
-import MoreComponent from "../components/More/MoreComponent";
+import HotCallComponent from "../Components/HotCall/HotCallComponent";
+import MoreComponent from "../Components/More/MoreComponent";
 
-import FabScreen from "../components/fab";
+import FabScreen from "../Components/fab";
 import { HOME, HOTCALL, MORE, NOTICEBOARD, SEARCH } from "../values/screenName";
 
 

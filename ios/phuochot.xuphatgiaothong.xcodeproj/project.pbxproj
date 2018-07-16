@@ -48,7 +48,6 @@
 		74A2C3DCB43C470388C9257C /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68533A4419E3429E8F6E09D0 /* rubicon-icon-font.ttf */; };
 		7CD8D894AB3B438D88F10AB0 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D396EA7BB7470896ACB3B8 /* SimpleLineIcons.ttf */; };
 		0B1092D8B8FD4CCCAAE7C3FF /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 610625B72C0B4FF7939E0E3E /* Zocial.ttf */; };
-		597E7288DDD74F8DBA463D4D /* libRNAdMobManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02643E27345248969F9ECFCC /* libRNAdMobManager.a */; };
 		19E9A35D1D604B32B056F048 /* libSQLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 553ECA0995D24F438222CF6C /* libSQLite.a */; };
 		70F9BE4CAA8644D0AE77D23E /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D00E81536B4786920A83BA /* libSplashScreen.a */; };
 /* End PBXBuildFile section */
@@ -290,8 +289,6 @@
 		68533A4419E3429E8F6E09D0 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		30D396EA7BB7470896ACB3B8 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		610625B72C0B4FF7939E0E3E /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5185C004ABCC4F66BBF21219 /* RNAdMobManager.xcodeproj */ = {isa = PBXFileReference; name = "RNAdMobManager.xcodeproj"; path = "../node_modules/react-native-admob/ios/RNAdMobManager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		02643E27345248969F9ECFCC /* libRNAdMobManager.a */ = {isa = PBXFileReference; name = "libRNAdMobManager.a"; path = "libRNAdMobManager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		6DB8A3ACA7E54A17A6D2DBFF /* SQLite.xcodeproj */ = {isa = PBXFileReference; name = "SQLite.xcodeproj"; path = "../node_modules/react-native-sqlite-storage/src/ios/SQLite.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		553ECA0995D24F438222CF6C /* libSQLite.a */ = {isa = PBXFileReference; name = "libSQLite.a"; path = "libSQLite.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		3583B7F0F408420597E546E2 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; name = "SplashScreen.xcodeproj"; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
@@ -324,7 +321,6 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				597E7288DDD74F8DBA463D4D /* libRNAdMobManager.a in Frameworks */,
 				19E9A35D1D604B32B056F048 /* libSQLite.a in Frameworks */,
 				70F9BE4CAA8644D0AE77D23E /* libSplashScreen.a in Frameworks */,
 			);
@@ -495,7 +491,6 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				5185C004ABCC4F66BBF21219 /* RNAdMobManager.xcodeproj */,
 				6DB8A3ACA7E54A17A6D2DBFF /* SQLite.xcodeproj */,
 				3583B7F0F408420597E546E2 /* SplashScreen.xcodeproj */,
 			);
@@ -1078,13 +1073,9 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/phuochot.xuphatgiaothong.app/phuochot.xuphatgiaothong";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
 					"$(SRCROOT)\..\node_modules\react-native-sqlite-storage\src\ios",
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
@@ -1107,13 +1098,9 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/phuochot.xuphatgiaothong.app/phuochot.xuphatgiaothong";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
 					"$(SRCROOT)\..\node_modules\react-native-sqlite-storage\src\ios",
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
@@ -1137,7 +1124,6 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
 					"$(SRCROOT)\..\node_modules\react-native-sqlite-storage\src\ios",
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
@@ -1160,7 +1146,6 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
 					"$(SRCROOT)\..\node_modules\react-native-sqlite-storage\src\ios",
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
@@ -1192,13 +1177,9 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
 					"$(SRCROOT)\..\node_modules\react-native-sqlite-storage\src\ios",
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
@@ -1230,13 +1211,9 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
 					"$(SRCROOT)\..\node_modules\react-native-sqlite-storage\src\ios",
 					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
@@ -1263,9 +1240,6 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1290,9 +1264,6 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;

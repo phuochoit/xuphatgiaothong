@@ -72,9 +72,6 @@ class HotCallComponent extends React.Component {
                     ListHeaderComponent={() => {
                         return (<AdMobBannerHeader bannerSize="banner" />);
                     }}
-                    ListFooterComponent={() => {
-                        return (<AdMobBannerContent bannerSize="mediumRectangle" />);
-                    }}
                     data={this.state.data}
                     renderItem={({ item, index }) => {
                         return (<HotCallItemsComponent item={item} index={index} navigation={this.props.navigation} />);

@@ -3,7 +3,7 @@ import { Button, Icon, View, Fab } from 'native-base';
 import { Linking} from 'react-native'
 
 import { styles, colormenu } from "../../assets/css/style";
-import { facebook_share, google_plus } from "../service/string";
+import { facebook_share, google_plus } from "../Service/string";
 import { AdMobBannerFooter } from "./admob";
 const count_back = 5;
 class FabScreen extends Component {

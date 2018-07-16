@@ -9,7 +9,7 @@ import { styles } from '../../../assets/css/style';
 
 import { NOTICEBOARDDETAIL } from "../../values/screenName";
 
-import { developer_google, google_app, google_app_magiamgia } from "../../service/string";
+import { developer_google, google_app, google_app_magiamgia } from "../../Service/string";
 
 class MoreComponent extends Component {
     state = {}
@@ -68,7 +68,6 @@ class MoreComponent extends Component {
                             </CardItem>
                         </TouchableOpacity>
                     </Card>
-                    <AdMobBannerContent bannerSize="mediumRectangle" />
                 </ScrollView>
             </View>
         );

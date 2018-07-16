@@ -2,9 +2,9 @@
 import React, { Component } from "react";
 import { StackNavigator } from "react-navigation";
 // Container
-import HomeComponent from "../components/Home/HomeComponent";
-import FormComponent from "../components/Home/FormComponent";
-import HomeDetailComponent from "../components/Home/HomeDetailComponent";
+import HomeComponent from "../Components/Home/HomeComponent";
+import FormComponent from "../Components/Home/FormComponent";
+import HomeDetailComponent from "../Components/Home/HomeDetailComponent";
 
 // screenName
 import { SCOOTER, HOME, HOMEDETAIL } from "../values/screenName";

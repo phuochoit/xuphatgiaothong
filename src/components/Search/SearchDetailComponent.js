@@ -132,7 +132,6 @@ class SearchDetailComponent extends Component {
                 />
             );
         let fullData = this.state.onsearch ? ViewLoad : FlastData;
-        console.log('return', this.state);
         return (
             <View style={[styles.background, styles.flex1]}>
                 <StyleProvider style={getTheme(myThemeHeader)}>

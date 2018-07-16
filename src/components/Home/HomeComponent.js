@@ -5,7 +5,7 @@ import SplashScreen from 'react-native-splash-screen';
 
 //component
 import HeaderComponent from "../Header/";
-import { AdMobBannerContent, AdMobBannerHeader } from "../admob";
+import { AdMobBannerHeader } from "../admob";
 //styles
 import { styles } from '../../../assets/css/style';
 //
@@ -56,7 +56,6 @@ class HomeComponent extends Component {
                             <Image source={require('../../../assets/images/icons-xetai.jpg')} style={[styles.home_image]} />
                         </TouchableOpacity>
                     </View>
-                    <AdMobBannerContent bannerSize="mediumRectangle" />
                 </ScrollView>
             </View>
         );

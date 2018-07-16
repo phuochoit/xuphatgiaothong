@@ -5,7 +5,7 @@ import { Card, CardItem, Thumbnail, Left, Body } from 'native-base';
 import HeaderComponent from "../Header/";
 import { SEARCHDETAIL } from "../../values/screenName";
 import { styles } from "../../../assets/css/style";
-import { AdMobBannerContent} from "../admob";
+import { AdMobBannerHeader} from "../admob";
 
 class SearchComponent extends Component {
     state = {}
@@ -14,6 +14,7 @@ class SearchComponent extends Component {
             <View style={[styles.background, styles.flex1]}>
                 <HeaderComponent navigation={this.props.navigation} title="Tìm Kiếm" icon_home={true} go_back="" />
                 <ScrollView style={[styles.home_scrollView]}>
+                    <AdMobBannerHeader bannerSize="banner" />
                     <Card style={[styles.flex0]}>
                         <TouchableOpacity onPress={() => {
                             this.props.navigation.navigate(SEARCHDETAIL, { table_name: 'Xuphat', search_title: 'Lỗi Vi Phạm' });
@@ -56,7 +57,6 @@ class SearchComponent extends Component {
                             </CardItem>
                         </TouchableOpacity>
                     </Card>
-                    <AdMobBannerContent bannerSize="mediumRectangle" />
                 </ScrollView>
             </View>
         );

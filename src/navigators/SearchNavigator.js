@@ -2,8 +2,8 @@
 import React, { Component } from "react";
 import { StackNavigator } from "react-navigation";
 // Container
-import SearchComponent from "../components/Search/SearchComponent";
-import SearchDetailComponent from "../components/Search/SearchDetailComponent";
+import SearchComponent from "../Components/Search/SearchComponent";
+import SearchDetailComponent from "../Components/Search/SearchDetailComponent";
 
 // screenName
 import { SEARCH, SEARCHDETAIL } from "../values/screenName";

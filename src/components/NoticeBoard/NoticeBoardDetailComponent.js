@@ -90,9 +90,6 @@ class NoticeBoardDetailComponent extends Component {
                     ListHeaderComponent={() => {
                         return (<AdMobBannerHeader bannerSize="banner" />);
                     }}
-                    ListFooterComponent={() => {
-                        return (<AdMobBannerContent bannerSize="mediumRectangle" />);
-                    }}
                     data={this.state.data}
                     renderItem={({ item, index }) => {
                         return (

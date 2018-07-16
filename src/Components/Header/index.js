@@ -1,7 +1,7 @@
 import React from "react";
 import { View, BackHandler } from "react-native";
 import { Header, Left, Right, Title,  Button, Body, Icon, StyleProvider, getTheme} from "native-base";
-import { AdMobInterstitial } from 'react-native-admob';
+// import { AdMobInterstitial } from 'react-native-admob';
 
 import { styles, colorbgbox } from "../../../assets/css/style";
 import { myThemeHeader } from "../../../assets/css/my_material";
@@ -54,11 +54,11 @@ class HeaderComponent extends React.Component {
         this.props.navigation.goBack();
     }
     render() {  
-        if (this.state.show_ads) {
-            AdMobInterstitial.setAdUnitID('ca-app-pub-1070789846238739/5771328983');
-            AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
-            AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd());
-        }
+        // if (this.state.show_ads) {
+        //     AdMobInterstitial.setAdUnitID('ca-app-pub-1070789846238739/5771328983');
+        //     AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
+        //     AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd());
+        // }
         button_left = <View />;
         if(this.props.go_back){
             button_left = (

@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { H3,Thumbnail } from "native-base";
 import { styles, thumbnail_xp } from "../../../assets/css/style";
-import { get_image_bb } from "../../service/service";
+import { get_image_bb } from "../../Service/service";
 
 class NoticeBoardItemsComponent extends React.Component {
     constructor(props) {
