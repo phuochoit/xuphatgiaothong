@@ -97,10 +97,6 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    lintOptions {
-        disable 'GradleCompatible'
-        disable 'InvalidPackage'
-    }
     dexOptions {
         javaMaxHeapSize "4g"
     }
@@ -109,9 +105,9 @@ android {
     defaultConfig {
         applicationId "com.phuochoit.xuphatgiaothong"
         minSdkVersion 16
-        targetSdkVersion 22
-        versionName "2.2.1"
-        versionCode 5
+        targetSdkVersion 27
+        versionName "2.2.2"
+        versionCode 6
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
