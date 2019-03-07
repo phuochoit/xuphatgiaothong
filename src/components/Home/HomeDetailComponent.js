@@ -38,7 +38,7 @@ class HomeDetailComponent extends Component {
     _getData() {
         let record = []
         db.transaction((tx) => {
-            tx.executeSql('SELECT * FROM XuPhat AS xp WHERE xp.loai_xe = ' + this.props.navigation.state.params.loai_xe + '  AND xp.group_value = ' + this.props.navigation.state.params.group_value + ' AND xp.id != ' + this.props.navigation.state.params.id + ' ORDER BY xp.ten_loi ASC LIMIT 0,5', [], (tx, results) => {
+            tx.executeSql('SELECT * FROM XuPhat AS xp WHERE xp.loai_xe IN (' + getIdLoaiXe(this.props.navigation.state.params.loai_xe) +')  AND xp.group_value = ' + this.props.navigation.state.params.group_value + ' AND xp.id != ' + this.props.navigation.state.params.id + ' ORDER BY xp.ten_loi ASC LIMIT 0,5', [], (tx, results) => {
                 let len = results.rows.length;
                 for (let i = 0; i < len; i++) {
                     let row = results.rows.item(i);

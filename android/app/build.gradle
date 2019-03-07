@@ -100,16 +100,16 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.phuochoit.xuphatgiaothong"
         minSdkVersion 16
-        targetSdkVersion 27
-        versionName "2.2.2"
-        versionCode 6
+        targetSdkVersion 28
+        versionName "2.5.0"
+        versionCode 7
         ndk {
-            abiFilters "armeabi-v7a", "x86"
+            abiFilters "armeabi-v7a", "x86","arm64-v8a"
         }
         multiDexEnabled true
     }
@@ -118,7 +118,7 @@ android {
             reset()
             enable enableSeparateBuildPerCPUArchitecture
             universalApk false  // If true, also generate a universal APK
-            include "armeabi-v7a", "x86"
+            include "armeabi-v7a", "x86","arm64-v8a"
         }
     }
     signingConfigs {
@@ -149,7 +149,7 @@ android {
         variant.outputs.each { output ->
             // For each separate APK per architecture, set a unique version code as described here:
             // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
-            def versionCodes = ["armeabi-v7a":1, "x86":2]
+            def versionCodes = ["armeabi-v7a":1, "x86":2,"arm64-v8a": 3]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
@@ -174,7 +174,6 @@ dependencies {
     implementation(project(':react-native-sqlite-storage'))
     implementation(project(':react-native-splash-screen'))
 
-    implementation "com.facebook.react:react-native:+"
     implementation "com.android.support:appcompat-v7:27.1.1"
     implementation 'com.android.support:support-annotations:27.1.1'
 

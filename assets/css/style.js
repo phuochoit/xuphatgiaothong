@@ -16,7 +16,7 @@ const padding = 10;
 const fontcolor = '#333';
 
 export const styles = StyleSheet.create({
-    flex0:{
+    flex0: {
         flex: 0
     },
     flex1: {
@@ -163,7 +163,7 @@ export const styles = StyleSheet.create({
     tab_items_icon: {
         width: 25,
         height: 25,
-        tintColor:'#000'
+        tintColor: '#000'
     },
     tab_items_icon_active: {
         width: 25,
@@ -288,7 +288,7 @@ export const styles = StyleSheet.create({
         marginRight: 10
     },
     // new style home page
-    position_full:{
+    position_full: {
         position: 'absolute',
         top: 0,
         bottom: 0,
@@ -297,18 +297,19 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    home_image: { 
-        width: width, 
-        height: (width / 2) - 10,
+    home_image: {
+        width: width / 2,
+        height: (width / 2) - 5,
         resizeMode: 'stretch'
     },
     home_scrollView: {
         flex: 1,
-        marginTop: 10, 
+        marginTop: 10,
         paddingHorizontal: 5
     },
     home_scrollView_view: {
-        marginBottom: 10
+        marginBottom: 5,
+        flex: 1
     },
 
     // /deatail 
@@ -317,29 +318,28 @@ export const styles = StyleSheet.create({
         width: 'auto',
         height: (width / 3) - 10,
         resizeMode: 'contain',
-        justifyContent:'center',
+        justifyContent: 'center',
         alignItems: 'center',
     },
 
     // more
     ideas_image: {
-        width: width, 
-        height: (width /2),
-        flex:1       
+        width: width,
+        height: (width / 2),
+        flex: 1
     },
 
     //search 
-    box_wraper_item: { 
-        flex: 0, 
+    box_wraper_item: {
+        flex: 0,
         marginBottom: 10,
-        borderRadius: 6 
+        borderRadius: 6
     },
-    box_item: { 
-        flex: 1, 
-        flexDirection: 'row', 
-        backgroundColor: '#fff', 
-        paddingHorizontal: 10, 
-        paddingVertical: 5 
+    box_item: {
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#fff',
+        paddingHorizontal: 10,
+        paddingVertical: 5
     }
 });
-
