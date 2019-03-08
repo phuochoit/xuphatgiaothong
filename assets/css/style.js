@@ -298,8 +298,8 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
     home_image: { 
-        width: width, 
-        height: (width / 2) - 10,
+        width: width / 2, 
+        height: (width / 2) - 5,
         resizeMode: 'stretch'
     },
     home_scrollView: {
@@ -308,7 +308,9 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 5
     },
     home_scrollView_view: {
-        marginBottom: 10
+        marginBottom: 10,
+        marginBottom: 5,
+        flex: 1
     },
 
     // /deatail 

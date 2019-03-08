@@ -692,3 +692,28 @@ export function get_image_bb(name) {
 
     return url;
 }
+
+export function getIdLoaiXe(idxe) {
+    id = '';
+    switch (idxe) {
+        case 1:
+            id = '1';
+            break;
+        case 2:
+            id = '2,66,4';
+            break;
+        case 5:
+            id = '5,75,11,111,65,8,72,7144,33,96,64,32,24'
+            break
+        case 16:
+            id = '16';
+            break;
+        case 22:
+            id = '22';
+            break;
+        case 33:
+            id = '33';
+            break;
+    }
+    return id;
+} 
